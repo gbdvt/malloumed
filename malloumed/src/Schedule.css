@@ -1,0 +1,43 @@
+.schedule-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: #1e1e1e;
+    color: #ffffff;
+  }
+  
+  .schedule-day {
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .schedule-day h3 {
+    color: #f06292;
+    margin-bottom: 1rem;
+  }
+  
+  .schedule-day ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .class-time {
+    background-color: #4a4a4a;
+    color: #ffffff;
+    padding: 0.5rem;
+    border-radius: 5px;
+    margin: 0.5rem 0;
+  }
+  
+  .class-time.passed {
+    background-color: #f06292; /* Soft pink for passed classes */
+  }
+  
+  .class-time:hover {
+    background-color: #ff80ab;
+    cursor: pointer;
+  }
+  

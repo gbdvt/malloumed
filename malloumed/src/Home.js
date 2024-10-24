@@ -1,14 +1,26 @@
-import React from 'react';
-import './Home.css';  // Link to a CSS file for better styling
+import React, { useState } from 'react';
+import './Home.css';
 
 const Home = () => {
+  const [tasks, setTasks] = useState([
+    { text: 'Review Lecture 1 Notes', completed: false },
+    { text: 'Complete Quiz for Lecture 2', completed: false },
+    { text: 'Add Flashcards for Lecture 3', completed: false }
+  ]);
+
+  const toggleTask = (index) => {
+    const newTasks = [...tasks];
+    newTasks[index].completed = !newTasks[index].completed;
+    setTasks(newTasks);
+  };
+
   return (
     <div className="home-container">
       <div className="greeting">
         <h1>Hello Mallou!</h1>
         <p>You've had 3 classes today, please upload them.</p>
       </div>
-      
+
       <div className="progress-bar-container">
         <p>Today's Progress:</p>
         <div className="progress-bar">
@@ -24,20 +36,15 @@ const Home = () => {
           <button className="upload-btn">Biología</button>
         </div>
       </div>
-
-      <div className="quick-actions">
-        <h2>Quick Actions</h2>
-        <button className="action-btn">Quizzes of the Day</button>
-        <button className="action-btn">Flashcards</button>
-        <button className="action-btn">Spaced Repetition</button>
-      </div>
-
       <div className="checklist-section">
         <h2>Your To-Do List for Today</h2>
         <ul className="checklist">
-          <li><input type="checkbox" /> Review Lecture 1 Notes</li>
-          <li><input type="checkbox" /> Complete Quiz for Lecture 2</li>
-          <li><input type="checkbox" /> Add Flashcards for Lecture 3</li>
+          {tasks.map((task, index) => (
+            <li key={index} onClick={() => toggleTask(index)} className={task.completed ? 'completed' : ''}>
+              <input type="checkbox" checked={task.completed} onChange={() => toggleTask(index)} />
+              {task.text}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

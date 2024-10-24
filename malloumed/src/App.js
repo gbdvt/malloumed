@@ -6,6 +6,9 @@ import QuizzesFlashcards from './QuizzesFlashcards';
 import AssignmentTracker from './AssignmentTracker';
 import SpacedRepetition from './SpacedRepetition';
 import Navbar from './Navbar';
+import Notes from './Notes';
+import Schedule from './Schedule'; // Make sure the path is correct
+
 
 function App() {
   return (
@@ -18,6 +21,8 @@ function App() {
           <Route path="/quizzes" element={<QuizzesFlashcards />} />
           <Route path="/assignments" element={<AssignmentTracker />} />
           <Route path="/spaced-repetition" element={<SpacedRepetition />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/schedule" element={<Schedule />} />
         </Routes>
       </div>
     </Router>

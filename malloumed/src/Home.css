@@ -76,43 +76,64 @@ body {
   background-color: #ff80ab; /* Lighter pink */
 }
 
-/* Quick actions */
-.quick-actions {
-  margin-bottom: 2rem;
-}
-
-.action-btn {
-  background-color: #6a1b9a;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 1rem 2rem;
-  margin: 0.5rem;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.action-btn:hover {
-  background-color: #8e24aa; /* Light purple */
-}
-
-/* Checklist */
+/* Checklist section */
 .checklist-section {
   width: 80%;
-  text-align: left;
+  max-width: 600px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .checklist {
   list-style-type: none;
   padding: 0;
+  font-size: 1.5rem;
 }
 
 .checklist li {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
 .checklist input[type="checkbox"] {
   margin-right: 1rem;
+  transform: scale(1.5);
+}
+
+/* Strike-through effect when completed */
+.checklist li.completed {
+  text-decoration: line-through;
+  color: #b0b0b0;
+}
+
+/* Cross-out animation */
+.checklist li.completed {
+  position: relative;
+}
+
+.checklist li.completed::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  background-color: #f06292;
+  width: 0%;
+  left: 0;
+  bottom: 50%;
+  transition: width 0.5s ease;
+}
+
+.checklist li.completed::after {
+  width: 100%;
+}
+
+/* General styling improvements */
+button {
+  font-family: 'Poppins', sans-serif;
 }
