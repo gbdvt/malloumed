@@ -1,0 +1,66 @@
+/* Navbar styling */
+.navbar {
+    background-color: #333;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid #f06292; /* Soft pink border */
+  }
+  
+  .navbar-logo h1 {
+    color: #f06292; /* Soft pink */
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+  }
+  
+  .navbar-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    margin-left: 2rem;
+  }
+  
+  .navbar-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-links a:hover {
+    color: #ff80ab; /* Lighter pink on hover */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .navbar-links li {
+      margin-left: 0;
+      margin-bottom: 1rem;
+    }
+  
+    .navbar-links a {
+      font-size: 1.5rem;
+    }
+  }
+  
